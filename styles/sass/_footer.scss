@@ -1,0 +1,28 @@
+footer{
+    background-color: $bg_color_2;
+
+    .container{
+        @include Dfx-JCsb-AIc;
+        flex-wrap: wrap;
+        padding: 72px 0;
+
+        @include phone{
+            // background-color: red;
+            padding: 20px 0 4px;
+
+            @include Dfx-JCsb-AIc;
+            flex-direction: column;
+            height: 186px;
+        }
+    }
+
+    // .nav_footer{
+        // @include Border_Test(red);
+    // }
+
+    .copyright{
+        // @include Border_Test(red);
+        color: $txt_color_2;
+        margin: auto;
+    }
+}

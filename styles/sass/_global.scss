@@ -1,0 +1,63 @@
+// GLOBAL
+body{
+    background-color: $bg_color_1;
+    color: $txt_color_1;
+    font-family: 'Inria Sans', sans-serif;
+}
+// main{
+//     min-height: 95vh;
+// }
+.container{
+    // @include Border_Test(green);
+    padding: 0 180px;
+    max-width: 1440px;
+    margin: auto;
+    overflow-x: hidden;
+
+    @include ipad_max{
+        padding: 0 60px;
+    }
+
+    @include phone{
+        padding: 0 10px;
+    }
+}
+// section{
+//     @include Border_Test(white);
+// }
+
+section.section{
+    margin-bottom: 95px;
+
+    h2{
+        font-size: 16px;
+        padding-bottom: 10px;
+        @include phone{
+            margin: 0 50px;
+        }
+    }
+}
+
+section.section_genre{
+    h2:first-child{
+        padding-bottom: 46px;
+        text-align: center;
+    }
+}
+
+a{
+    text-transform: capitalize;
+    font-size: 14px;
+}
+p{
+    font-size: 14px;
+}
+h2{
+    font-size: 16px;
+}
+img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+

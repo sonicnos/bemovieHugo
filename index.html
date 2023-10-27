@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- LIBRARY JQUERY -->
+    <script type="text/javascript" src="src/jquery/jquery.min.js"></script>
+    <!-- ICONS -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- SWIPER -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <!-- STYLE -->
+    <link rel="stylesheet" href="styles/style.css">
+    <title>BeMovies | exo duo</title>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="bloc_logo">
+                <a href="#" class="logo">
+                    <span>Be</span>Movies
+                </a>
+            </div>
+
+            <input type="checkbox" name="burger" id="burger">
+            <label for="burger">
+                <i class='bx bx-menu-alt-right'></i>
+            </label>
+
+            <nav class="nav_header">
+                <a href="#">Search</a>
+                <a href="#">Latest</a>
+                <a class="btn_modal_movie_on " href="#">Genres</a>
+                <a class="btn_modal_login_on " href="#">Register</a>
+                <a class="btn_modal_login_on " href="#">Signin</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MODAL INFOS MOVIES -->
+    <div class="modal modal_movie_item modal_desactive">
+        <div class="bloc_item">
+            <i class='bx bx-x-circle btn_modal_movie_off '></i>
+            <div class="movie_item">
+
+                <img src="imageTest.png" alt="">
+
+                <div class="infos_head">
+                    <!-- title -->
+                    <h3 class="title">The Godfather part III</h3>
+                    <!-- date -->
+                    <span class="date">1990</span>
+                    <!-- star & note -->
+                    <span class="note"><i class='bx bxs-star'></i> 7.4</span>
+                    <!-- genre -->
+                    <p>Crime / Drama / Thriller</p>
+                </div>
+
+                <div class="infos_body">
+                    <p>Spanning the years 1945 to 1955, a chronicle of the fictional Italian-American
+                        Corleone crime family.
+                        When organized crime family patriarch, Vito Corleone barely survives an attempt on his life,
+                        his youngest son, Michael steps in to take care of the would-be killers,
+                        launching a campaign of bloody revenge.</p>
+                    <br>
+                    <p>
+                        <span class="title">Cast: </span>
+                        Will Smith, The Rock
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL REGISTER LOGIN -->
+    <div class="modal modal_register_login modal_desactive">
+        <div class="bloc_item">
+            <i class='bx bx-x-circle btn_modal_login_off '></i>
+            <div class="register_login_item">
+                <div class="buttons">
+                    <button class="sig">signup</button>
+                    <button class="log button_activ">login</button>
+                </div>
+                <form action="#">
+                    <input type="text" name="usr" placeholder="Username">
+                    <input type="password" name="pass" placeholder="Password">
+                    <div class="bloc_check">
+                        <input type="checkbox" name="checkbox">
+                        <label for="">Remember me</label>
+                    </div>
+                    <button class="submit">login</button>
+                    <span class="msg">I forgot my password</span>
+                    <label class="choice">Not a member yer ? <span>Sign up</span></label>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- TEMPLATE -->
+    <template class="template_login_item">
+        <div class="register_login_item">
+            <div class="buttons">
+                <button class="sig">signup</button>
+                <button class="log button_activ">login</button>
+            </div>
+            <form action="#">
+                <input type="text" name="usr" id="usr" placeholder="Username">
+                <input type="password" name="pass" id="pass" placeholder="Password">
+                <div class="bloc_check">
+                    <input type="checkbox" name="checkbox">
+                    <label for="">Remember me</label>
+                </div>
+                <button class="submit">login</button>
+                <span class="msg">I forgot my password</span>
+                <label class="choice">Not a member yer ? <span>Sign up</span></label>
+            </form>
+    </template>
+
+    <template class="template_register_item">
+        <div class="register_login_item">
+            <div class="buttons">
+                <button class="sig button_activ">signup</button>
+                <button class="log">login</button>
+            </div>
+            <form action="#">
+                <input type="text" name="usr" id="usr" placeholder="Username">
+                <input type="password" name="pass" id="pass" placeholder="Password">
+                <input type="password" name="verif_pass" id="verif_pass" placeholder="Verification password">
+                <div class="bloc_check">
+                    <input type="checkbox" name="checkbox">
+                    <label for="">Remember me</label>
+                </div>
+                <button class="submit">login</button>
+                <span class="msg">I forgot my password</span>
+                <!--<label class="choice">Not a member yer ? <span>Sign up</span></label> -->
+            </form>
+    </template>
+
+
+    <main>
+        <div class="container">
+
+            <section>
+                <div class="section_container bloc_search">
+                    <form action="#">
+                        <input type="search" name="search" id="search" placeholder="godfather">
+                        <button><i class='bx bx-right-arrow-alt'></i></button>
+                    </form>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="section_container">
+                    <h2>Results for “godfather”</h2>
+                    <div class="bloc_gallery">
+                        <div class="gallery">
+                            <div class="swiper swiper_search">
+                                <div class="swiper-wrapper">
+                                    <!-- ELEMENTS SLIDE -->
+                                    <div class="swiper-slide">
+                                        <div class="item">
+                                            <div class="bloc_float">
+                                                <!-- title -->
+                                                <h3 class="title">The Godfather part III</h3>
+                                                <!-- date -->
+                                                <span class="date">1990</span>
+                                                <!-- genre -->
+                                                <p>Crime / Drama / Thriller</p>
+                                                <!-- star -->
+                                                <i class='bx bxs-star'></i>
+                                                <!-- note -->
+                                                <span class="note">7.4</span>
+                                            </div>
+                                            <img src="imageTest.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>    
+                        </div>
+                        <!-- PAGINATION -->
+                        <div class="search_next swiper-button-next">
+                            <i class='bx bx-chevron-right-circle'></i></div>
+                        <div class="search_prev swiper-button-prev">
+                            <i class='bx bx-chevron-left-circle'></i></div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="section_container">
+                    <h2>Latest releases</h2>
+                    <div class="bloc_gallery">
+                        <div class="gallery">
+                            <div class="swiper swiper_Latest_releases">
+                                <div class="swiper-wrapper">
+                                    <!-- ELEMENTS SLIDE -->
+                                    <div class="swiper-slide">
+                                        <div class="item">
+                                            <div class="bloc_float">
+                                                <!-- title -->
+                                                <h3 class="title">The Godfather part III</h3>
+                                                <!-- date -->
+                                                <span class="date">1990</span>
+                                                <!-- genre -->
+                                                <p>Crime / Drama / Thriller</p>
+                                                <!-- star -->
+                                                <i class='bx bxs-star'></i>
+                                                <!-- note -->
+                                                <span class="note">7.4</span>
+                                            </div>
+                                            <img src="imageTest.png" alt="poster">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- PAGINATION -->
+                        <div class="Latest_releases_next swiper-button-next">
+                            <i class='bx bx-chevron-right-circle'></i></div>
+                        <div class="Latest_releases_prev swiper-button-prev">
+                            <i class='bx bx-chevron-left-circle'></i></div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section section_genre">
+                <div class="section_container">
+                    <h2>Movies by genre</h2>
+                    <div class="bloc_nav">
+                        <nav class="nav_genre">
+                            <a href="#">Comedy</a>
+                            <a href="#">Drama</a>
+                            <a href="#">Action</a>
+                            <a href="#">Romance</a>
+                            <a href="#">Fantasy</a>
+                            <a href="#">Animation</a>
+                        </nav>
+                        <span></span>
+                    </div>
+                    <h2>Comedy</h2>
+                    <div class="bloc_gallery">
+                        <div class="gallery">
+                            <div class="swiper swiper_genre">
+                                <div class="swiper-wrapper">
+                                    <!-- ELEMENTS SLIDE -->
+                                    <div class="swiper-slide">
+                                        <div class="item">
+                                            <div class="bloc_float">
+                                                <!-- title -->
+                                                <h3 class="title">The Godfather part III</h3>
+                                                <!-- date -->
+                                                <span class="date">1990</span>
+                                                <!-- genre -->
+                                                <p>Crime / Drama / Thriller</p>
+                                                <!-- star -->
+                                                <i class='bx bxs-star'></i>
+                                                <!-- note -->
+                                                <span class="note">7.4</span>
+                                            </div>
+                                            <img src="imageTest.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- PAGINATION -->
+                        <div class="genre_next swiper-button-next">
+                            <i class='bx bx-chevron-right-circle'></i></div>
+                        <div class="genre_prev swiper-button-prev">
+                            <i class='bx bx-chevron-left-circle'></i></div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+
+    <footer>
+        <div class="container">
+            <div class="bloc_logo">
+                <a href="#" class="logo">
+                    <span>Be</span>Movies
+                </a>
+            </div>
+
+            <nav class="nav_footer">
+                <a href="#">Search</a>
+                <a href="#">Latest</a>
+                <a href="#">Genres</a>
+                <a href="#">Register</a>
+                <a href="#">Signin</a>
+            </nav>
+
+            <div class="copyright">
+                <p>@2023 - All rights reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SWIPER -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <!-- STYLE BURGER -->
+    <script src="js/swiper/swiper.js"></script>
+    <script src="js/modal.js"></script>
+    <!-- JS FILE-->
+    <script src="./js/script.js"></script>
+</body>
+
+</html>

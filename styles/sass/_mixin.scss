@@ -1,0 +1,77 @@
+
+@mixin Border_Test($color){
+    border: solid 3px $color;
+}
+
+
+// TAILLE ECRANS
+$ipad: 768px;
+$ipad_pro: 1024px; 
+$laptop13: 1280px;
+@mixin phone( $mediaMin: $ipad){
+    @media screen and (max-width: $mediaMin){
+        @content;
+    }
+}
+@mixin ipad_max( $mediaMax: $ipad_pro){
+    @media screen and (max-width: $mediaMax){
+        @content;
+    }
+}
+@mixin ipad( $mediaMin: $ipad){
+    @media screen and (min-width: $mediaMin){
+        @content;
+    }
+}
+@mixin ipad_pro_max( $mediaMax: $laptop13){
+    @media screen and (max-width: $mediaMax) {
+        @content;
+    }
+}
+@mixin ipad_pro( $mediaMin: $ipad_pro){
+    @media screen and (min-width: $mediaMin) {
+        @content;
+    }
+}
+@mixin laptop13( $mediaMin: $laptop13){
+    @media screen and (min-width: $mediaMin) {
+        @content;
+    }
+}
+
+// DISPLAY FLEX
+@mixin Dfx-JCc-AIc{
+    display: flex;
+        justify-content: center;
+        align-items: center;
+}
+@mixin Dfx-JCsb-AIc{
+    display: flex;
+        justify-content: space-between;
+        align-items: center;
+}
+@mixin Dfx-JCsa-AIc{
+    display: flex;
+        justify-content: space-around;
+        align-items: center;
+}
+@mixin Dfx-JCfe-AIc{
+    display: flex;
+        justify-content:flex-end;
+        align-items: center;
+}
+@mixin Dfx-JCfs-AIc{
+    display: flex;
+        justify-content:flex-start;
+        align-items: center;
+}
+@mixin Dfx-JCc-AIfs{
+    display: flex;
+        justify-content:flex-end;
+        align-items: flex-start;
+}
+@mixin Dfx-JCfe-AIfe{
+    display: flex;
+        justify-content:flex-end;
+        align-items: flex-end;
+}

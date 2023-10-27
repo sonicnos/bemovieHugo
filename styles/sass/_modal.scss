@@ -1,0 +1,210 @@
+.modal{
+    position: fixed;
+        z-index: 40000;
+    overflow: hidden;
+    transition: 400ms;
+}
+
+.modal_active{
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    padding: 20px;
+}
+.modal_desactive{
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: -105vw;
+    // padding: 0;
+    // h3, span, p, .title{
+    //     padding: 0 0 !important;
+    //     font-size: 0 !important;
+    // }
+}
+
+
+
+.btn_modal_movie_off,
+.btn_modal_login_off
+{
+    position: absolute;
+        top: 12px;
+        left: 12px;
+    cursor: pointer;
+
+    &:hover{
+        color: $txt_color_2;
+    }
+}
+
+.modal_movie_item{
+    background-color: rgb(0, 0, 0, 0.6);
+    @include Dfx-JCc-AIc;
+
+    .bloc_item{
+        position: relative;
+        background-color: $bg_color_2;
+        max-width: 742px;
+        padding: 75px;
+        @include Dfx-JCc-AIc;
+
+        // @include phone{
+        //     // padding: 35px;
+        // }
+    }
+
+    .movie_item{
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: repeat(6, auto-fit);
+        
+        @include phone{
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(4, auto-fit);
+        }
+
+        font-family: 'Inria Sans', sans-serif;
+
+        .infos_head{
+            grid-row: 1/2;
+            grid-column: 4/7;
+            @include phone{
+                grid-column: 3/7;
+                grid-row: 1/2;
+            }
+
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+
+            h3, .note{
+                font-size: 20px;
+                color: $txt_color_3;
+            }
+    
+            h3,.date{
+                font-size: 20px;
+                font-weight: 700;
+            }
+            
+            .date{
+                color: $txt_color_2;
+                font-size: 14px;
+            }
+    
+            
+        }
+        .infos_body{
+            grid-row: 2/7;
+            grid-column: 4/7;
+            
+            @include phone{
+                grid-column: 1/7;
+            }
+            margin-top: 13px;
+            p{
+                font-size: 16px;
+                line-height: 24px;
+            }
+            .title{
+                padding-right: 5px;
+            }
+        }
+
+        img{
+            grid-row: 1/6;
+            grid-column: 1/4;
+            @include phone{
+                width: 180px;
+                grid-row: 1/2;
+                grid-column: 1/3;
+            }
+        }
+    }
+}
+
+
+.modal_register_login{
+    background-color: $bg_color_2_2;
+    backdrop-filter: blur(5px);
+    @include Dfx-JCc-AIc;
+
+    .bloc_item{
+        background-color: $bg_color_2;
+        padding: 60px;
+        position: relative;
+        @include Dfx-JCc-AIc;
+        // @include Border_Test(red)
+    }
+
+    button{
+        cursor: pointer;
+    }
+
+    .buttons{
+        display: flex;
+        margin-bottom: 54px;
+
+        button{
+            padding: 12px 30px;
+            background-color: $bg_color_2;
+            color: $txt_color_1;
+            border: solid 1px $txt_color_1;
+            text-transform: uppercase;
+            &:hover{
+                background-color: $bg_color_3_hover;
+            }
+        }
+
+
+        button:first-child{
+            border-radius: 8px 0 0 8px;
+        }
+        button:last-child{
+            border-radius: 0 8px 8px 0;
+        }
+
+        button.button_activ{
+            border: solid 0px $txt_color_1;
+            background-color: $bg_color_3;
+            margin: 0 -1px;
+            position: relative;
+        }
+    }
+
+    form{
+        // @include Dfx-JCc-AIc;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+
+        input{
+            border-radius: 8px;
+            padding: 14px 20px; 
+            border: none;
+        }
+
+        
+        .submit{
+            margin-top: 20px;
+            border-radius: 8px;
+            padding: 12px;
+            text-transform: uppercase;
+            background-color: $bg_color_3;
+            color: $txt_color_1;
+            &:hover{
+                background-color: $bg_color_3_hover;
+            }
+        }
+
+        .choice span{
+            cursor: pointer;
+        }
+
+        .msg, .choice span{
+            color: $txt_color_3;
+        }
+    }
+}

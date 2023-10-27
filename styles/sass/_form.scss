@@ -1,0 +1,32 @@
+
+.bloc_search{
+    // background-color: red;
+    @include Dfx-JCc-AIc;
+    margin: 73px 0;
+    
+    form{
+        // background-color: black;
+        // @include Dfx-JCc-AIc;
+        display: flex;
+        border-radius: 8px;
+        overflow-x: hidden;
+
+        input{
+            padding: 13px 0 13px 18px ;
+        }
+        button{
+            background-color: $bg_color_3;
+            padding: 13px;
+            cursor: pointer;
+
+            &:hover{
+                background-color: $bg_color_3_hover;
+            }
+            
+            i{
+                font-size: 20px;
+                color: $txt_color_1;
+            }
+        }
+    }
+}

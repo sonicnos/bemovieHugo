@@ -1,0 +1,131 @@
+header{
+    .container{
+        position: relative;
+    }
+}
+
+nav{
+    // @include Border_Test(blue);
+    @include Dfx-JCc-AIc;
+    gap: 29px;
+    
+    a{
+        @include Dfx-JCc-AIc;
+        font-weight: 700;
+        padding: 7px 10px;
+        border-radius: 8px;
+
+        &:hover,
+        &:focus{
+            background-color: $txt_color_3;
+        }
+    }
+}
+
+
+nav.nav_header{
+    @include ipad_max{
+        flex-direction: column;
+        background-color: $bg_color_2;
+        position: fixed;
+            top: 0;
+            right: -105vw;
+            z-index: 20000;
+        height: 100vh;
+        width: 100vw;
+
+        a{
+            width: 90%;
+            background-color: transparent;
+            position: relative;
+            padding: 15px 0;
+            &::before{
+                position: absolute;
+                    bottom: 0px;
+                display: unset;
+                content: '';
+                height: 3px;
+                width: 0;
+                background-color: $txt_color_2;
+                transition: 300ms;
+                border-radius: 20px;
+            }
+            &:hover,
+            &:focus{
+                color: $txt_color_2;
+            }
+            &:hover::before,
+            &:focus:before{
+                width: 60%;
+            }
+        }
+    }
+}
+
+.nav_footer,
+.nav_genre{
+    margin: auto;
+    @include phone{
+        gap: 5px;
+    }
+}
+
+.bloc_nav{
+    @include Dfx-JCc-AIc;
+}
+.nav_genre{
+    position: relative;
+    padding-bottom: 26px;
+    margin-bottom: 29px;
+    ::before{
+        content: '';
+        position: absolute;
+            bottom: 0;
+            left: 10px;
+        width: calc(100% - 20px);
+        height: 1px;
+        background-color: $txt_color_1;
+    }
+}
+
+
+// SHOW AND HIDE BURGER NAVIGATION
+#burger{
+    // border: solid 5px green;
+    background-color: pink;
+    display: none;
+
+    &:checked ~ nav{
+        right: 0;
+    }
+    &:checked ~ label{
+        position: fixed;
+    }
+}
+#burger ~ label{
+    position: absolute;
+        right: 180px;
+        z-index: 40000;
+    display: none;
+
+    @include ipad_max{
+        right: 60px;
+    }
+
+    @include phone{
+        right: 10px;
+    }
+
+    i{
+        font-size: 26px;
+        padding: 5px;
+        cursor: pointer;
+        &:hover{
+            color: $txt_color_2;
+        }
+    }
+    
+    @include ipad_max{
+        display: block;
+    }
+}
