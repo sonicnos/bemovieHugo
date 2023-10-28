@@ -1,3 +1,4 @@
+const url = 'https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc'
 const options = {
   method: 'GET',
   headers: {
@@ -6,14 +7,21 @@ const options = {
   }
 };
 
-fetch('https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc', options)
-  .then(response => response.json())
-  .then(response => {
-    response.results.forEach(movie => {
-      console.log(movie.results);
-    });
-  })
-  .catch(err => console.error(err));
+async function getData () {
+  const r = await fetch(url, options);
+  console.log(r);
+}
+
+getData();
+
+// fetch(url, options)
+//   .then(response => response.json())
+//   .then(response => {
+//     response.results.forEach(movie => {
+//       console.log(movie.results);
+//     });
+//   })
+//   .catch(err => console.error(err));
 
 
 
