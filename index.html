@@ -31,7 +31,7 @@
 
             <nav class="nav_header">
                 <a href="#">Search</a>
-                <a href="#">Latest</a>
+                <a href="#latest-releases">Latest</a>
                 <a class="btn_modal_movie_on " href="#">Genres</a>
                 <a class="btn_modal_login_on " href="#">Register</a>
                 <a class="btn_modal_login_on " href="#">Signin</a>
@@ -146,20 +146,20 @@
                 <div class="section_container bloc_search">
                     <form action="#">
                         <input type="search" name="search" id="search" placeholder="godfather">
-                        <button><i class='bx bx-right-arrow-alt'></i></button>
+                        <button id="searchBtn"><i class='bx bx-right-arrow-alt'></i></button>
                     </form>
                 </div>
             </section>
 
             <section class="section">
                 <div class="section_container">
-                    <h2>Results for “godfather”</h2>
+                    <h2>Results for “<span class="search-bar-value"></span>”</h2>
                     <div class="bloc_gallery">
                         <div class="gallery">
                             <div class="swiper swiper_search">
-                                <div class="swiper-wrapper">
+                                <div class="swiper-wrapper swiper-wrapper-search">
                                     <!-- ELEMENTS SLIDE -->
-                                    <div class="swiper-slide">
+                                    <div class="swiper-slide slide-search">
                                         <div class="item">
                                             <div class="bloc_float">
                                                 <!-- title -->
@@ -177,7 +177,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>    
+                            </div>
                         </div>
                         <!-- PAGINATION -->
                         <div class="search_next swiper-button-next">
@@ -188,15 +188,15 @@
                 </div>
             </section>
 
-            <section class="section">
+            <section class="section" id="latest-releases">
                 <div class="section_container">
                     <h2>Latest releases</h2>
                     <div class="bloc_gallery">
                         <div class="gallery">
                             <div class="swiper swiper_Latest_releases">
-                                <div class="swiper-wrapper">
+                                <div class="swiper-wrapper swiper-wrapper-latest-releases">
                                     <!-- ELEMENTS SLIDE -->
-                                    <div class="swiper-slide">
+                                    <div class="swiper-slide slide-last-releases">
                                         <div class="item">
                                             <div class="bloc_float">
                                                 <!-- title -->
@@ -210,7 +210,7 @@
                                                 <!-- note -->
                                                 <span class="note">7.4</span>
                                             </div>
-                                            <img src="imageTest.png" alt="poster">
+                                            <img src="imageTest.png" alt="">
                                         </div>
                                     </div>
                                 </div>
@@ -227,7 +227,7 @@
 
             <section class="section section_genre">
                 <div class="section_container">
-                    <h2>Movies by genre</h2>
+                    <h2 id="genres">Movies by genre</h2>
                     <div class="bloc_nav">
                         <nav class="nav_genre">
                             <a href="#">Comedy</a>
@@ -243,9 +243,9 @@
                     <div class="bloc_gallery">
                         <div class="gallery">
                             <div class="swiper swiper_genre">
-                                <div class="swiper-wrapper">
+                                <div class="swiper-wrapper swiper-wrapper-genre">
                                     <!-- ELEMENTS SLIDE -->
-                                    <div class="swiper-slide">
+                                    <div class="swiper-slide slide-genre">
                                         <div class="item">
                                             <div class="bloc_float">
                                                 <!-- title -->
@@ -259,7 +259,7 @@
                                                 <!-- note -->
                                                 <span class="note">7.4</span>
                                             </div>
-                                            <img src="imageTest.png" alt="">
+                                            <img src="imageTest.png" alt="poster">
                                         </div>
                                     </div>
                                 </div>
@@ -287,8 +287,8 @@
 
             <nav class="nav_footer">
                 <a href="#">Search</a>
-                <a href="#">Latest</a>
-                <a href="#">Genres</a>
+                <a href="#latest-releases">Latest</a>
+                <a href="#genres">Genres</a>
                 <a href="#">Register</a>
                 <a href="#">Signin</a>
             </nav>
@@ -298,6 +298,7 @@
             </div>
         </div>
     </footer>
+
 
     <!-- SWIPER -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
